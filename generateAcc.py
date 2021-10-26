@@ -1,4 +1,6 @@
-#Generate standalone account with account info to be imported into wallet
+"""
+    Generate standalone account with account info to be imported into wallet
+"""
 
 from algosdk import mnemonic, encoding, account
 
