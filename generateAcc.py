@@ -1,9 +1,5 @@
 """
     Generate standalone account with account info to be imported into wallet
-    
-    Private Key:  3pNOCIRkltSblIcacJVZBUWytnkRLi+iKcOnMA5vBx/QFDgNDYm6UMwMHRdNg6dvxBnKE9sNTj5NKF22NVYnfw==
-    Mnemonic Phrase:  knock demise aerobic embark coast vivid pill maple addict fiction proud expect goose horror mesh come echo pledge thunder apology broccoli swift wealth abandon castle
-    Address:  2AKDQDINRG5FBTAMDULU3A5HN7CBTSQT3MGU4PSNFBO3MNKWE574DWDK74
 """
 import params
 from algosdk import mnemonic, encoding, account

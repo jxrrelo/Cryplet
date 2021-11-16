@@ -8,7 +8,7 @@ from algosdk import transaction, account
 
 client = kmd.KMDClient(params.kmd_token, params.kmd_address)
 
-sender = "6BFUSRWJPMW2UMRSSREE4GRSYLO55GHB3HQIKPCN57BUD5ABMCQT443X5Y" #4000252000000000 - default wallet
+sender = "2AKDQDINRG5FBTAMDULU3A5HN7CBTSQT3MGU4PSNFBO3MNKWE574DWDK74" #4000252000000000 - default wallet
 receiver = "RIIPVCPPMMJIWTUHXZVW3E6XOJI4QXG5F37AGIWVQU6I7RBLCPLAQL4PPU" #0 - myWallet
 gen = "sandnet-v1"
 gh = "8dH5NoDVzb7aBzFqry5PwYemvgMUNHNoQLkpjkV/SHI="
