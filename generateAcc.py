@@ -7,9 +7,6 @@ from algosdk.v2client import algod
 
 algod_client = algod.AlgodClient(params.algod_token, params.algod_address)
 
-account_info = algod_client.account_info("2AKDQDINRG5FBTAMDULU3A5HN7CBTSQT3MGU4PSNFBO3MNKWE574DWDK54")
-print("Account balance: {} microAlgos".format(account_info.get('amount')) + "\n")
-
 pk, addr = account.generate_account()
 mn = mnemonic.from_private_key(pk)
 

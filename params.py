@@ -3,7 +3,7 @@ from os.path import expanduser
 home = expanduser("~")
 
 # path to the data directory
-data_dir_path = environ.get("ALGORAND_DATA", home + "/node/data")
+data_dir_path = environ.get("ALGORAND_DATA", home + "/node/testnetdata")
 kmd_folder_name = "kmd-v0.5"
 
 if data_dir_path and kmd_folder_name:
