@@ -9,9 +9,7 @@ from algosdk import transaction, account
 from algosdk.v2client import algod
 from algosdk.future.transaction import PaymentTxn
 
-client = kmd.KMDClient(params.kmd_token, params.kmd_address)
 acl = algod.AlgodClient(params.algod_token, params.algod_address)
-
 
 account_info = acl.account_info("2AKDQDINRG5FBTAMDULU3A5HN7CBTSQT3MGU4PSNFBO3MNKWE574DWDK74")
 print("Account balance: {} microAlgos".format(account_info.get('amount')) + "\n")
