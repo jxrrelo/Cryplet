@@ -21,8 +21,10 @@ address = wallet.generate_key()
 print("New account:", address)
 
 # delete the account
+"""
 try:
     delete = wallet.delete_key(address)
     print("Account deleted:", delete)
 except:
     print("Invalid Account Address!")
+"""
