@@ -12,23 +12,28 @@ This project focuses on 2 cryptocurrencies - Ethereum and Algorand. Both of thes
 ### Ethereum
 
 ### Algorand
-
-
-## Design
-### Ethereum
-
-### Algorand
+(to be elaborated)
+- security primitives
+- how passphrase is generated and linked to private key
 
 ## Development
 ### Ethereum
 
 ### Algorand
+(to be elaborated)
+- Use of docker
+- sandboxing
+- uses of scripts (generating wallet/account)
 
 ## Usage
 ### Ethereum
 
 ### Algorand
-
+1. Ensure [Docker](https://docs.docker.com/get-docker/) is installed locally
+2. Run Docker Daemon
+3. Run `./sandbox up testnet` to spin up a Docker container defaulting to the testnet binaries.
+4. Run `./sandbox down` to stop the Docker container
+5. (More to be added)
 
 ## Resources
 - [Ethereum](https://ethereum.org/en/)
