@@ -1,7 +1,6 @@
 import params
 from algosdk import kmd, mnemonic
 from algosdk.wallet import Wallet
-import credentials
 
 client = kmd.KMDClient(params.kmd_token, params.kmd_address)
 
@@ -16,12 +15,12 @@ for wallet in wallets:
     
 print("Wallet ID:", walletid)
 
-wallethandle = client.init_wallet_handle(walletid, credentials.walletpw)
+wallethandle = client.init_wallet_handle(walletid, "pass123")
 print("Wallet Handle:", wallethandle)
 
 accounts = client.list_keys(wallethandle)
 print("Accounts:", accounts)
-accountkey = client.export_key(wallethandle, credentials.walletpw, credentials.addr)
+accountkey = client.export_key(wallethandle, "pass123", "2AKDQDINRG5FBTAMDULU3A5HN7CBTSQT3MGU4PSNFBO3MNKWE574DWDK74")
 print("Account Key:", accountkey)
 mn = mnemonic.from_private_key(accountkey)
 print("Mnemonic:", mn)

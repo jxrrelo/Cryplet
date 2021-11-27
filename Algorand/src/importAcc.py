@@ -1,5 +1,4 @@
 import params
-import credentials
 from algosdk import kmd, account, encoding, mnemonic
 
 client = kmd.KMDClient(params.kmd_token, params.kmd_address)
@@ -15,7 +14,7 @@ for wallet in wallets:
     
 print("Wallet ID:", walletid)
 
-wallethandle = client.init_wallet_handle(walletid, credentials.walletpw)
+wallethandle = client.init_wallet_handle(walletid, "pass123")
 print("Wallet Handle:", wallethandle)
 
 kpriv, addr = "eavzLKX0jSULDiTUiOfVAyu8EKJFFD5aAixrA1gwuzwdqtPOmxlVMVT3W6Cf78WxssKBenFrSrhHhCKjm8CYKQ==", "DWVNHTU3DFKTCVHXLOQJ736FWGZMFAL2OFVUVOCHQQRKHG6ATAU6TO2P3I"#account.generate_account()
