@@ -3,8 +3,6 @@
 """
 
 import params
-from algosdk import kmd
-from algosdk import transaction, account
 from algosdk.v2client import algod
 from algosdk.future.transaction import PaymentTxn
 

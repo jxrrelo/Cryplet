@@ -15,16 +15,17 @@ wallet = Wallet("myWallet", "pass123", client)
 # get wallet information
 info = wallet.info()
 print("Wallet name:", wallet.handle)
+print("Mnemonic:", wallet.get_mnemonic())
+print("MDK:", wallet.export_master_derivation_key())
 
 # create an account
 address = wallet.generate_key()
 print("New account:", address)
 
 # delete the account
-"""
+
 try:
     delete = wallet.delete_key(address)
     print("Account deleted:", delete)
 except:
     print("Invalid Account Address!")
-"""
