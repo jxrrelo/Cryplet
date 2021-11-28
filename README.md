@@ -1,7 +1,7 @@
 # Cryplet
 
 ## Description
-Cryptocurrencies have been taking off lately so it will be interesting to see how a simple transaction could be constructed and verified cryptographically. Cryplet, or a cryptocurrency wallet, is a physical medium which stores the private/public key pairs that allows cryptocurrency transactions to take place. In addition to this basic function of storing the keys, a cryptocurrency wallet more often also offers the functionality of encrypting and/or signing information. 
+Cryptocurrencies have been taking off lately so it will be interesting to see how a simple transaction could be constructed and verified cryptographically. Cryplet, or a cryptocurrency wallet, is a physical or software medium which stores the private/public key pairs that allows cryptocurrency transactions to take place. In addition to this basic function of storing the keys, a cryptocurrency wallet more often also offers the functionality of encrypting and/or signing information. 
 
 ## Motivations
 Just like the way people keep cash or cards in a physical wallet, bitcoins and other cryptocurrencies can be thought of as being stored in a wallet that can be hardware-based or web-based. The wallet can also reside on a mobile device, on a computer desktop, or kept safe by printing the private keys and addresses used for access on paper. But how safe are any of these digital wallets? The answer to this depends on how the user manages the wallet. Every wallet contains a set of private keys without which the owner cannot access their cryptocurrency. The biggest danger in cryptocurrency security is perhaps the individual user revealing the private key or developers who did not securely implement their applications as we shall see some examples later. Without the private key, the user will never have access to his/her cryptocurrencies again. Besides this problem, a user can also lose his/her cryptocurrencies by computer malfunctions (crashing a hard drive), hacking, or simply losing the physical device where the digital wallet resides. While there are many factors that contribute to security such as smart contract bugs, this project focuses exclusively on the cryptography and its application. We start with how private keys are generated, then how public keys and addresses are subsequently derived. Then we construct a simple transaction and verify it. Finally, we examine its security and research that looks into its weaknesses.
@@ -9,10 +9,10 @@ Just like the way people keep cash or cards in a physical wallet, bitcoins and o
 This project focuses on 2 cryptocurrencies - Ethereum and Algorand. Both of these cryptocurrencies offer a wide range of resources that enables the expedition of the development phase, some of which include cryptographic library functions, online video explanations and research papers. Ethereum is undoubtedly one of the most popular platforms for building decentralised applications, with many high value use cases such as decentralised finance. Algorand, on the other hand, has several discussions and researches revolving around it, explaining why it is in pole position to take over the lead in the smart contract platform space. With the study of Ethereum and Algorand, this project aims to cover sufficient breadth and depth, sieving out and discussing possible similarities and differences in their security implementations.
 
 ## Research
-To make private keys user friendly, both blockchains support the use of a Mnemonic phrase which performs the same function as private keys. Mnemonic phrases are a human-readable version of the private keys. The user can sign transactions and recover lost accounts using part of their mnemonic phrase. Mnemonic or seed phrases can range from 12 - 25 words depending on the blockchain ecosystem being dealt with. However, there are some notable differences that will be discussed.
+To make private keys user friendly, both blockchains support the use of a Mnemonic phrase which performs the same function as private keys. Mnemonic phrases are a human-readable version of the private keys. The user can sign transactions and recover lost accounts using part of their mnemonic phrase. Mnemonic or seed phrases can range from 12 - 25 words depending on the blockchain ecosystem. However, there are some notable differences that will be discussed.
 
 ### Ethereum
-Private keys are generated as random 256 bits, which is 64 (hex) characters or 32 bytes. After this, Ethereum public keys (128 characters / 64 bytes) are created using an algorithm called Elliptic Curve Digital Signature Algorithm (ECDSA). Ethereum uses secp256k1 to generate public keys. Public key is a point in this Elliptic curve algorithm. In order to create Ethereum Addresses, keccak256 algorithm is applied to the x and y points on public keys.
+Private keys are generated as random 256 bits, which is 64 (hex) characters or 32 bytes. After this, Ethereum public keys (128 characters / 64 bytes) are created using an algorithm called Elliptic Curve Digital Signature Algorithm (ECDSA). Ethereum uses secp256k1 to generate public keys. Public key is a point in this Elliptic curve algorithm. In order to create Ethereum Addresses, keccak256 hash algorithm is applied to the x and y points on public keys.
 
 ### Algorand
 Algorand uses Ed25519 (Edwards-curve Digital Signature Algorithm) high-speed, high-security elliptic-curve signatures. The keys are produced through standard, open-source cryptographic libraries packaged with each of the SDKs. The key generation algorithm takes a random value as input and outputs two 32-byte arrays, representing a public key and its associated private key. The public key is transformed into an Algorand address, by adding a 4-byte checksum to the end of the public key and then encoding it in base32. The result is what both the developer and end-user recognize as an Algorand address. The address is 58 characters long.
@@ -30,6 +30,9 @@ Some scripts are written for the purpose of generating a wallet, setting up an a
 
 ## Usage
 ### Ethereum
+1. Ensure pycoin and pysha3 are installed. pip install pycoin or pip install pysha3
+2. Open main.py and run the program
+3. Recommended to follow the flow in the presentation. Important to generate keys first.
 
 ### Algorand
 1. Ensure Python3 and [Docker](https://docs.docker.com/get-docker/) is installed locally
