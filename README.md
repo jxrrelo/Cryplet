@@ -41,7 +41,9 @@ The Algorand blockchain supports mnemonic keys and is generated during the accou
 
 ## Development
 ### Ethereum
-A basic blockchain is implemented to demonstrate how some of the security implementations of general blockchain wallets are utilised. Contents include generation of private and public keys and Ethereum address, digital signatures and verification, hash function in setting the proof of work difficulty.
+A basic blockchain is implemented to demonstrate how some of the security implementations of general blockchain wallets are utilised. Contents include generation of private and public keys and Ethereum address, digital signatures and verification, hash function in setting the proof of work difficulty. We also tried tampering with the data in this simple blockchain that our verification algorithm detected.
+
+Open source librabries from pycoin and pysha were used for the cryptography.
 
 ### Algorand
 The Algorand Blockchain Explorer will be used to demonstrate a real-life scenario of a transaction taking place on the testnet. A testnet is an instance of a blockchain powered by the same or a newer version of the underlying software, to be used for testing and experimentation without risk to real funds or the main chain. With the use of Docker, we can spin up a container defaulting to the testnet binaries to perform tests. This environment which we carry out the tests is also known as a sandbox, isolated from the mainnet.
