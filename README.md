@@ -21,13 +21,14 @@ ECC is also used to sign transactions with the private key to produce signature.
 #### Hash functions for proof of work
 Hash functions are also used to determine the proof of work difficulty. The meta data of the block is hashed but in order to generate a valid block hash, the number of zeroes in the hash must be at least equal to the difficulty level. In our demo, we used a difficulty level up to 3 but on the mainnnet the diffuclty level is actually 19. Due to the properties of the hash function, all outputs are equally likely so the chances of finding a valid hash is 1 / 16^difficulty. It is also almost impossible to find the pre-image even if we know the difficulty beforehand, which ensures progress freeness and fairness in mining. This is also demonstrated in the presentation.
 
+#### Security Research
 We also did more research on the security of Ethereum blockchain wallets. In short, the cryptography is strong but the shortcomings appear in developers' implementations as well as end users lack of knowledge on how to generate safe keys and keep them secure.
 
-#### Parity Wallet with Empty Passphrase
+##### Parity Wallet with Empty Passphrase
 Many wallets have a recovery phrase feature where your private keys can be derived from in case you switch wallets or just for ease of remembering. But what happens when one is too lazy to even have a recovery phrase and leave this field empty? Well, it turns out quite a number of people had this idea. An empty recovery phrase (“”) using the Parity wallet gives a private key 0x4d5db4107d237df6a3d58ee5f70ae63d73d7658d4026f2eefd2f204c81682cb7. The address 0x00a329c0648769a73afac7f9381e08fb43dbea72 is then derived from it. There have been 8772 transactions on this address for a total of 5215 ETH by 2019. This address is very active and being monitored for inbound transactions which are immediately transferred out by one of many private key holders watching this address. Unlike hacks due to bad private key generation above which has decreased over time, the number of hacks related to empty passphrases have only increased, likely as more new users discover cryptocurrency but did not have the knowledge to protect their private keys. There are almost 31,000 transactions now on this compromised address (Etherscan, 2021).
 Fortunately, other wallets like MetaMask are much better. They do not allow users to come up with their own passphrase or brain wallets so it prevents this issue entirely. The reasoning is that it is highly unlikely we can generate enough entropy on our own. Rather, these more secure wallets generate the passphrase for users and ask them to save it.
 
-#### Insufficiently Random Private Key Generation
+##### Insufficiently Random Private Key Generation
 One of the most important aspects of security is generating a truly random private key. Since Ethereum uses 256 bit private keys, the probability of getting a private key that is already used should only be 1 in 2^256.
 But in a study done by ISE, they managed to find 732 clashing addresses and their corresponding private key which had Ether transactions with about 2^35 keys scanned and 1024 CPU hours (Ethercombing: Finding Secrets in Popular Places, 2019). These addresses had a combined transaction volume of 49,060! ISE found that these private keys were not truly randomly generated as most of them only had 32 bits of entropy either for the 32 most significant bits or the 32 least significant bits, meaning the rest of the 224 bits were probably just hard coded as 0. This is what allowed the researchers to comb through billions of addresses in just 8 hours with parallel computing. Needless to say, the balance of these addresses were a grand total of 0. Bad actors are scarily efficient. 
 The address at 0x957cd4ff9b3894fc78b5134a8dc72b032ffbc464 belonging to whom people dub the “Blockchain Bandit” had back in 2019 44,744 ETH, which at today’s price of $4250, amounts to almost $200M! Fortunately, people have gotten wiser since then and from 2019 to November 2021, the Blockchain Bandit only managed to pilfer another 11 ETH, a fraction of the previous years (Etherscan, 2021). The researchers knew the Blockchain Bandit was watching these weak addresses for any incoming transactions and wanted to test how quickly they would transfer the funds out. When the researchers sent over $1 to one of the compromised addresses, the funds were transferred to the Blockchain Bandit instantly. Pretty scary indeed if you don’t generate or keep your keys safely.
@@ -40,7 +41,7 @@ The Algorand blockchain supports mnemonic keys and is generated during the accou
 
 ## Development
 ### Ethereum
-A basic blockchain is implemented to demonstrate how some of the security implementations of general blockchain wallets are utilised.
+A basic blockchain is implemented to demonstrate how some of the security implementations of general blockchain wallets are utilised. Contents include generation of private and public keys and Ethereum address, digital signatures and verification, hash function in setting the proof of work difficulty.
 
 ### Algorand
 The Algorand Blockchain Explorer will be used to demonstrate a real-life scenario of a transaction taking place on the testnet. A testnet is an instance of a blockchain powered by the same or a newer version of the underlying software, to be used for testing and experimentation without risk to real funds or the main chain. With the use of Docker, we can spin up a container defaulting to the testnet binaries to perform tests. This environment which we carry out the tests is also known as a sandbox, isolated from the mainnet.
@@ -69,4 +70,8 @@ Some scripts are written for the purpose of generating a wallet, setting up an a
 - [How Bitcoin Wallets Work](https://www.youtube.com/watch?v=GSTiKjnBaes)
 - [bip39 standard](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
 - [Generating Secure Crypto Wallets and Accounts](https://www.youtube.com/watch?v=x-P-nmhiO-g)
+- [Security Dangers of NIST curves](http://www.hyperelliptic.org/tanja/vortraege/20130531.pdf)
+- [Ethercombing: Finding Secrets In Popular Places](https://www.ise.io/casestudies/ethercombing/)
+- [Etherscan: Blockchain Bandit's Wallet](https://etherscan.io/address/0x957cd4ff9b3894fc78b5134a8dc72b032ffbc464)
+- [Etherscan: Parity Wallet Empty Passphrase(https://etherscan.io/address/0x00a329c0648769a73afac7f9381e08fb43dbea72)
 
