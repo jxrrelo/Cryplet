@@ -76,31 +76,6 @@ class Blockchain:
                 return False
         return True
 
-# print(blockchain.chain[0].data)
-# print(blockchain.chain[0].previous_hash)
-# print(blockchain.chain[0].hash)
-# print(blockchain.chain[0].proof_of_work)
-# print(blockchain.chain[1].data)
-# print(blockchain.chain[1].previous_hash)
-# print(blockchain.chain[1].hash)
-# print(blockchain.chain[1].proof_of_work)
-# print(blockchain.chain[1].public_key)
-# print(blockchain.chain[1].signature)
-# print("Signature is", verify_ecdsa_secp256k1(str(blockchain.chain[1].data), blockchain.chain[1].signature, blockchain.chain[1].public_key))
-# print("Blockchain state is", blockchain.is_valid())
-# blockchain.chain[1].data = {
-#     'from': 'Alice',
-#     'to': 'Bob',
-#     'amount': 1000,
-# }
-# print("Signature is", verify_ecdsa_secp256k1(str(blockchain.chain[1].data), blockchain.chain[1].signature, blockchain.chain[1].public_key))
-# print("Blockchain state is", blockchain.is_valid())
-# print(blockchain.chain[2].data)
-# print(blockchain.chain[2].previous_hash)
-# print(blockchain.chain[2].hash)
-# print(blockchain.chain[2].proof_of_work)
-# print('done')
-
 print("Welcome to Cryplet Alice! Here's a simple demo of a blockchain!\n")
 print("Enter 0 to exit")
 print("Enter 1 to generate private key")
