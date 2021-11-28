@@ -73,5 +73,5 @@ Some scripts are written for the purpose of generating a wallet, setting up an a
 - [Security Dangers of NIST curves](http://www.hyperelliptic.org/tanja/vortraege/20130531.pdf)
 - [Ethercombing: Finding Secrets In Popular Places](https://www.ise.io/casestudies/ethercombing/)
 - [Etherscan: Blockchain Bandit's Wallet](https://etherscan.io/address/0x957cd4ff9b3894fc78b5134a8dc72b032ffbc464)
-- [Etherscan: Parity Wallet Empty Passphrase(https://etherscan.io/address/0x00a329c0648769a73afac7f9381e08fb43dbea72)
+- [Etherscan: Parity Wallet Empty Passphrase](https://etherscan.io/address/0x00a329c0648769a73afac7f9381e08fb43dbea72)
 
