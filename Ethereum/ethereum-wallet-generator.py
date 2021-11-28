@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 # pip install ecdsa
 # pip install pysha3
 
@@ -30,16 +28,6 @@ address = keccak.hexdigest()[24:]
 def test(addrstr):
     assert(addrstr == checksum_encode(addrstr))
 
-test('0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed')
-test('0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359')
-test('0xdbF03B407c01E7cD3CBea99509d93f8DDDC8C6FB')
-test('0xD1220A0cf47c7B9Be7A2E6BA89F429762e7b9aDb')
-test('0x7aA3a964CC5B0a76550F549FC30923e5c14EDA84')
-
-k = sha3.keccak_256()
-k.update(b'Asgy5yqqm41ge')
-print(k.hexdigest())
-# print(keccak.update(b'hello'))
-# print("Private key:", priv.to_string().hex())
-# print("Public key: ", pub.hex())
-# print("Address:    ", checksum_encode(address))
+print("Private key:", priv.to_string().hex())
+print("Public key: ", pub.hex())
+print("Address:    ", checksum_encode(address))
